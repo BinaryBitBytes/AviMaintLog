@@ -148,9 +148,8 @@ const inspectorResolverInstance = new InspectorResolver(
   "IluvTunaSubs@mayo.bun",
   "PaS#WuRDDD"
 );
-const removed =
-  inspectorResolverInstance._mutation.addInspector.inspectorName(`Miles`);
-console.log(removed);
+const added = inspectorResolverInstance._mutationaddInspector;
+console.log(added);
 console.log(inspectorResolverInstance.addInspector);
 console.log(inspectorResolverInstance);
 console.log(inspectorResolverInstance.removeInspector);
