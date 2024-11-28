@@ -146,7 +146,13 @@ class ManagerResolver {
   }
 }
 
-const managerResolverInstance = new ManagerResolver();
+const managerResolverInstance = new ManagerResolver(
+  "Manny Gher",
+  "8675349",
+  "Manny@123.Com",
+  "HelloPassworld",
+  true
+);
 
 console.log(managerResolverInstance);
-export const managerResolver = managerResolverInstance;
+export const CLASSFUL_resolver_MANAGER = managerResolverInstance;

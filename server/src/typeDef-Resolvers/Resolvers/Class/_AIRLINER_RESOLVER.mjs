@@ -7,7 +7,7 @@ import { default as mongoose } from "mongoose";
  * airlinerResolver class contains GraphQL resolvers for Airliner-related queries and mutations.
  * It provides functionality to fetch, add, and remove airliners from the database.
  */
-class airlinerResolver {
+class AirlinerResolver {
   constructor() {
     this.AIRLINER_RES_QUERY = {
       Query: {
@@ -128,5 +128,5 @@ const AIRLINER_RES_QUERY = {
 // });
 // console.table(_AIRLINER_MODELED_);
 // console.warn(`Logging the resolver Query: ${airlinerResolver.Query}`);
-console.warn(airlinerResolver, 100);
-export const CLASSFUL_resolver_AIRLINER = airlinerResolver;
+console.warn(AirlinerResolver, 100);
+export const CLASSFUL_resolver_AIRLINER = AirlinerResolver;
