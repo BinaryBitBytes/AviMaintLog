@@ -18,9 +18,21 @@ const server = new ApolloServer({
   resolvers,
   plugins: [ApolloServerPluginDrainHttpServer({ httpServer })],
 });
-await server.start();
 
-app.use(cors(), bodyParser.json(), expressMiddleware(server));
-
-await new Promise((resolve) => httpServer.listen({ port: 4000 }, resolve));
-console.log(`🚀 Server ready at http://localhost:4000`);
+const _RUN_SERVER_ = async () => {
+  const START_SERVER = await server.start();
+  const PARSE_CORS_TO_EXPRESS_MIDDLEWARE = app.use(
+    cors(),
+    bodyParser.json(),
+    expressMiddleware(server)
+  );
+  const RESOLVE_HTTP_LISTEN = await new Promise((resolve) =>
+    httpServer.listen({ port: 4000 }, resolve)
+  );
+  const SERVER_READY = console.log(`🚀 Server ready at http://localhost:4000`);
+  return START_SERVER.then(
+    () =>
+      PARSE_CORS_TO_EXPRESS_MIDDLEWARE && RESOLVE_HTTP_LISTEN && SERVER_READY
+  );
+};
+_RUN_SERVER_();
